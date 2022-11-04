@@ -1,0 +1,12 @@
+2022-11-04 20:33:38 INFO  MemberProgram:23 - Introduce el numero de opcion que quieras ejecutar
+1. 'Listar'
+2. 'Añadir'
+3. 'Eliminar'
+4. 'Salir'
+2022-11-04 20:33:49 INFO  MemberProgram:23 - Introduce el numero de opcion que quieras ejecutar
+1. 'Listar'
+2. 'Añadir'
+3. 'Eliminar'
+4. 'Salir'
+2022-11-04 20:33:54 INFO  MemberReader:15 - Introduce el NIF del socio
+2022-11-04 20:33:54 INFO  MemberReader:17 - Introduce el nombre del usuario con NIF 

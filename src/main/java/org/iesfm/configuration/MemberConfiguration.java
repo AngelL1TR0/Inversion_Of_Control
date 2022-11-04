@@ -3,6 +3,7 @@ package org.iesfm.configuration;
 import org.iesfm.components.MemberProgram;
 import org.iesfm.components.MemberReader;
 import org.iesfm.components.MemberStorage;
+import org.iesfm.entity.Member;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,10 +25,8 @@ public class MemberConfiguration {
     }
 
     @Bean
-    public MemberStorage memberStorage(
-            Map partnersMap
-    )  {
-        return new MemberStorage(partnersMap);
+    public MemberStorage memberStorage(Map<String, Member> members) {
+        return new MemberStorage(members);
     }
 
     @Bean

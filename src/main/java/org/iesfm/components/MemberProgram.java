@@ -17,40 +17,40 @@ public class MemberProgram {
 
     public void execute() {
 
-        String awnser;
+        int awnser;
         String nif;
         do {
-            log.info("Introduce la opcion que quieras ejecutar" +
-                    "\n'Listar'" +
-                    "\n'Añadir'" +
-                    "\n'Eliminar'" +
-                    "\n'Salir'");
-            awnser = sc.nextLine();
+            log.info("Introduce el numero de opcion que quieras ejecutar" +
+                    "\n1. 'Listar'" +
+                    "\n2. 'Añadir'" +
+                    "\n3. 'Eliminar'" +
+                    "\n4. 'Salir'");
+            awnser = sc.nextInt();
             switch (awnser) {
-                case "Listar":
+                case 1:
                     memberStorage.listMembers();
-                    awnser = sc.nextLine();
+                    awnser = sc.nextInt();
                     break;
-                case "Añadir":
+                case 2:
                     memberReader.readMember();
                     memberStorage.addMember(memberReader.readMember());
-                    awnser = sc.nextLine();
+                    awnser = sc.nextInt();
                     break;
-                case "Eliminar":
+                case 3:
                     log.info("Introduce el NIF del usuario a eliminar");
                     nif = sc.nextLine();
                     memberStorage.deleteMember(nif);
-                    awnser = sc.nextLine();
+                    awnser = sc.nextInt();
                     break;
-                case "Salir":
+                case 4:
                     log.info("Saliendo...");
                     System.exit(0);
                     break;
             }
         }
-        while (awnser.equalsIgnoreCase("Listar")
-                || awnser.equalsIgnoreCase("Añadir")
-                || awnser.equals("Eliminar")
-                || awnser.equalsIgnoreCase("Salir"));
+        while (awnser == 1
+                || awnser == 2
+                || awnser == 3
+                || awnser == 4);
     }
 }

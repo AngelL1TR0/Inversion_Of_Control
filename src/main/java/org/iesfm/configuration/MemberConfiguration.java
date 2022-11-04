@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import java.util.Map;
 import java.util.Scanner;
 
 @Configuration
@@ -18,22 +19,25 @@ public class MemberConfiguration {
         return new Scanner(System.in);
     }
 
-    /*@Bean
-    public MemberReader memberReader(){
-        return new MemberReader();
+    @Bean
+    public MemberReader memberReader(Scanner scanner) {
+        return new MemberReader(scanner);
     }
 
-     */
 
     @Bean
-    public MemberStorage memberStorage(){
-        return new MemberStorage();
+    public MemberStorage memberStorage(
+            Map partnersMap
+    )  {
+        return new MemberStorage(partnersMap);
     }
 
-    /*@Bean
-    public MemberProgram memberProgram(){
-        return new MemberProgram();
+    @Bean
+    public MemberProgram memberProgram(
+            Scanner sc,
+            MemberReader  memberReader,
+            MemberStorage memberStorage
+    ) {
+        return new MemberProgram(sc, memberReader, memberStorage);
     }
-
-     */
 }

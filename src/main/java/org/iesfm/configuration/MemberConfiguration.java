@@ -5,12 +5,12 @@ import org.iesfm.components.MemberReader;
 import org.iesfm.components.MemberStorage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 import java.util.Map;
 import java.util.Scanner;
 
 @Configuration
+
 public class MemberConfiguration {
 
     @Bean
@@ -22,7 +22,6 @@ public class MemberConfiguration {
     public MemberReader memberReader(Scanner scanner) {
         return new MemberReader(scanner);
     }
-
 
     @Bean
     public MemberStorage memberStorage(

@@ -6,22 +6,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MemberStorage {
 
+    private Map<String, Member> members = new HashMap<>();
+
     public void addMember(Member member){
-        Map<String, Member> memberMap = new HashMap<>();
-
-
+        members.put(member.getNif(), member);
     }
     public void deleteMember(String nif){
-
+        members.remove(nif);
     }
     public List<Member> listMembers(){
-        List<Member> members = new ArrayList<>();
-        for ( Member membersList : members) {
-            members.toString();
-        }
-        return members;
+        return members.values()
+                .stream()
+                .collect(Collectors.toList());
     }
 }

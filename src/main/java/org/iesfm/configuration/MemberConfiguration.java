@@ -11,7 +11,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 @Configuration
-@PropertySource("application.properties")
 public class MemberConfiguration {
 
     @Bean

@@ -3,11 +3,8 @@ package org.iesfm.components;
 import lombok.AllArgsConstructor;
 import org.iesfm.entity.Member;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 @AllArgsConstructor
 public class MemberStorage {
 
@@ -19,9 +16,9 @@ public class MemberStorage {
     public void deleteMember(String nif){
         members.remove(nif);
     }
-    public List<Member> listMembers(){
-        return members.values()
-                .stream()
-                .collect(Collectors.toList());
+    public void listMembers(){
+        for (Map.Entry<String, Member> memberList : members.entrySet()){
+            System.out.println(memberList);
+        }
     }
 }

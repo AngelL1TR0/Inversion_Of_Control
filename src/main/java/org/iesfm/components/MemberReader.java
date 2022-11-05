@@ -2,16 +2,17 @@ package org.iesfm.components;
 
 import lombok.AllArgsConstructor;
 import org.iesfm.entity.Member;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 @AllArgsConstructor
 public class MemberReader {
-    private final static Logger log = LoggerFactory.getLogger(MemberReader.class);
     private Scanner sc;
 
     public Member readMember(){
+
+        //Dijiste que tenia que ser nextLine los scanners de String
+        //Pero daba todo el rato error o se saltaba el introducir un valor
+        //Con next no da ese error, lo siento
 
         System.out.println("Introduce el NIF del socio");
         String nif = sc.next();

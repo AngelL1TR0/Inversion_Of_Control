@@ -12,14 +12,16 @@ public class MemberReader {
     private Scanner sc;
 
     public Member readMember(){
-        log.info("Introduce el NIF del socio");
-        String nif = sc.nextLine();
-        log.info("Introduce el nombre del usuario con NIF " + nif);
-        String name = sc.nextLine();
-        log.info("Introduce el apellido de " + name);
-        String surname = sc.nextLine();
-        log.info("Introduce el codigo postal de " + name + " " + surname);
+
+        System.out.println("Introduce el NIF del socio");
+        String nif = sc.next();
+        System.out.println("Introduce el nombre del usuario con NIF " + nif);
+        String name = sc.next();
+        System.out.println("Introduce el apellido de " + name);
+        String surname = sc.next();
+        System.out.println("Introduce el codigo postal de " + name + " " + surname);
         int ccpp = sc.nextInt();
         return new Member(nif, name, surname, ccpp);
+
     }
 }
